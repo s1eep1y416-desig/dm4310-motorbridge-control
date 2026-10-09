@@ -1,0 +1,14 @@
+# Format only: no measured robot geometry or hardware control configuration.
+schema_version: 1
+hardware_enabled: false
+robot_name: null
+joint_order: [joint1, joint2]
+base_frame: null
+tool_frame: null
+length_unit: m
+angle_unit: rad
+link_lengths_m: [null, null]
+joint_axes: [null, null]
+joint_directions: [null, null]
+zero_offsets_rad: [null, null]
+model_evidence: null

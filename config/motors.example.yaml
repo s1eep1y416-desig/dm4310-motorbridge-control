@@ -1,0 +1,21 @@
+# 结构示例；没有控制程序加载此文件。null = 待确认，不是设备默认值。
+schema_version: 1
+hardware_enabled: false
+transport:
+  kind: null
+  adapter_model: null
+  channel_or_port: null
+  can_bitrate_bit_s: null
+  serial_baud: null
+motors:
+  - joint_name: joint1
+    declared_model: DM4310P
+    verified_model: null
+    sdk_model_key: null
+    firmware: null
+    motor_id: null
+    feedback_id: null
+    gear_ratio_motor_to_joint: null
+    direction_sign: null
+    zero_offset_rad: null
+    evidence: null

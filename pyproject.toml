@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dm4310-motorbridge-control"
+version = "0.1.0"
+description = "Incremental robotics control engineering and learning workspace"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["robot_control*"]
+namespaces = false
