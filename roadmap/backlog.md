@@ -1,8 +1,8 @@
 # 任务池
 
-> 规划在 REPO-001 仓库验证通过后复核。日期与估时可调整；S1-001 已开始，尚无已验收学习任务。
+> 规划在 REPO-001 仓库验证通过后复核。日期与估时可调整；S1-001 已于 2026-10-11 验收完成。
 
-阶段开发任务池共 38 项。2026-10-10 S1-001 最终离线代码复核通过，待用户运行记录和概念复述，状态 In Progress；其余 37 项为 Backlog。没有用户任务被预先标为完成。旧每日任务仍保持删除。证据见 [代码审查](../learning/reviews/2026-10-10-S1-001-review.md)。
+阶段开发任务池共 38 项。S1-001 的最终离线代码、用户 Linux 运行和概念复述于 2026-10-11 验收完成；其余 37 项为 Backlog。旧每日任务仍保持删除。证据见 [代码审查](../learning/reviews/2026-10-10-S1-001-review.md)。
 
 估时为专注学习/实现时间，另保留每周复盘、补练与等待。多于两小时的任务拆成多个学习单元，不要求一天做完。未来模块的输出名称在执行时确定。
 
@@ -10,7 +10,7 @@
 
 | ID | 核心任务 | 估时 | 依赖 | 提交物 | 完成判据 | 状态 | 代码与材料所在文件夹 |
 |---|---|---|---|---|---|---|---|
-| S1-001 | MotorBridge 入门与状态显示 | 2h | 无；使用现有 SDK 环境 | 用户状态显示程序、三组离线输出、对象关系解释 | 正确处理 MotorState/None、角度单位与三组输入；用户独立解释 | In Progress | 探索：`examples/S1_can_and_id/`；本项暂不强制提取核心 |
+| S1-001 | MotorBridge 入门与状态显示 | 2h | 无；使用现有 SDK 环境 | 用户状态显示程序、三组离线输出、对象关系解释 | 正确处理 MotorState/None、角度单位与三组输入；用户独立解释 | Completed | 探索：`examples/S1_can_and_id/`；本项暂不强制提取核心 |
 | S1-002 | SDK 连接入口与设备参数 | 2h | S1-001 | 连接方式选择、添加电机调用设计、参数/未知项简表 | 能解释 Controller 与 add_damiao_motor 参数；结合调用理解 ID 与收发，不猜设备值 | Backlog | 调用探索：`examples/S1_can_and_id/`；参数方案：`engineering/interfaces/`、`engineering/hardware/`；配置：`config/` |
 | S1-003 | SDK 状态契约与反馈新鲜度 | 2h | S1-002 | API/字段表、状态有效性设计、阻塞边界问题单 | 接口来自实际版本；明确无法证明新鲜度的情况 | Backlog | 状态契约：`engineering/interfaces/`；为 `src/robot_control/actuator/` 的实现准备 |
 | S1-004 | MotorBridge 状态读取封装与离线验证 | 4h | S1-003 | 用户读取封装、可替换 SDK 输入、单元测试 | 正常/无反馈/陈旧/错误身份有独立用例 | Backlog | 核心：`src/robot_control/actuator/`；测试：`tests/unit/`、`tests/fixtures/`；调用：`examples/S1_can_and_id/` |
