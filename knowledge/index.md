@@ -4,14 +4,21 @@
 
 ## 现有学习材料
 
-当前没有每日任务配套学习材料；此前生成的任务材料已按用户要求删除。尚未形成经过用户解释/实践验证的通用知识条目。
+2026-10-10 已提供 S1-001 学习材料，用户理解与实践尚未评估；此前删除的旧材料没有恢复。
+
+- [当前理论：MotorBridge 入门](motor-control/motorbridge.md)。
+- [当前设计：状态显示程序](../engineering/interfaces/motor-api.md)。
+- 按需参考：[机器人控制链路与证据](robotics/robot-architecture.md)、[首次接硬件前的资料整理](../engineering/architecture/s1-001-evidence-card-design.md)；不再作为首日必交作业。
+- [今日任务：操作、文件名、问题与验收](../learning/daily/2026-10-10-S1-001.md)。
+
+尚未形成经过用户解释/实践验证的掌握结论。
 [MotorBridge 接口基线](../engineering/motorbridge-api-baseline.md) 是版本相关工程记录；[来源映射](../docs/source-map.md) 保存项目规范来源。
 
 ## 按主题、阶段和模块
 
 | 主题 | 阶段 | 工程关联 | 当前状态 |
 |---|---|---|---|
-| CAN 帧、ID、反馈有效性 | S1 | actuator / 配置 | 待 S1-002/003 |
+| MotorBridge 对象、连接、反馈；按需补 CAN/ID | S1 | examples / actuator / 配置 | S1-001 已提供材料，理解未评估 |
 | 电机模式、PID、采样周期 | S2 | controllers / safety | 待任务学习 |
 | 力矩、减速比、摩擦与惯量 | S2/S6/S7 | 设备与动力学模型 | 待资料与模型证据 |
 | ROS 2 接口、QoS、TF2 | S3/S6 | ROS 工作区 | 待环境确认 |

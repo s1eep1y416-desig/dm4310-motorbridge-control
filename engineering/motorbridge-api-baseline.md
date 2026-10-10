@@ -29,3 +29,9 @@
 - `models.py` SHA-256：`274e9bc65da3bc85f769d39c56904e0f7a16ceae0ba143b9533acc09ab033a7a`。
 
 [MotorBridge 官方仓库](https://github.com/motorbridge/motorbridge) 用于后续查匹配版本源代码，不能以远端最新接口替代上面的本地 0.5.6 基线。
+
+## 2026-10-10 第一课环境复核
+
+本地版本仍为 0.5.6，core.py/models.py 的 SHA-256 与上表相同。用 `/Users/jkhkjg/Desktop/motorbridge/.venv/bin/python -I -B` 验证 Python 3.13.15、包元数据及 MotorState 的导入和合成构造；通过 unittest.mock.patch 令 ctypes.CDLL 调用直接失败，检查仍通过。因此本课可仅用实际 SDK 数据类离线学习，未加载 motor ABI、创建 Controller 或连接设备。此结果不证明总线或电机可用，也不替代用户练习。
+
+课程入口见 [MotorBridge 讲义](../knowledge/motor-control/motorbridge.md)，设计见 [motor-api.md](interfaces/motor-api.md)。

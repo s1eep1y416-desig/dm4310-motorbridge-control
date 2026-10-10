@@ -1,4 +1,20 @@
-# REPO-001：新仓库基础建设
+# 当前任务：S1-001 MotorBridge 入门与状态显示
+
+日期：2026-10-10，Asia/Shanghai。状态：In Progress；最终离线代码复核通过，待用户运行记录和概念复述，尚未验收。
+
+用户要求直接从 MotorBridge 开始，原环境/设备盘点作业已改为本课，任务 ID 保留。约两小时，先认识 SDK 对象，再写一个可运行的状态显示程序。
+
+1. [今日任务：具体文件、操作、问题与验收](learning/daily/2026-10-10-S1-001.md)。
+2. [理论：Controller、Motor、MotorState 与反馈流程](knowledge/motor-control/motorbridge.md)。
+3. [设计：状态输入、显示输出与三个离线场景](engineering/interfaces/motor-api.md)。
+
+已审查 `examples/S1_can_and_id/001_motorbridge_intro.py` 的最终保存版本：全部硬件调用已删除，三组合成输入、None、rad/deg/rad/s 和入口均通过离线复核；见 [代码审查](learning/reviews/2026-10-10-S1-001-review.md)。此前聊天中的真机版本未运行，不是最终文件。五题均保留用户原回答和正确答案讲解；第 4、5 题的正确答案不计作用户独立答对。下一步由用户亲自运行并记录输出，再用自己的话复述关键概念。
+
+今天不再提交原要求的环境 JSON 和完整设备证据卡；这些资料首次真实连接前补齐。原辅助文档保留作参考，决定见 [ADR-0002](engineering/design-decisions/ADR-0002-motorbridge-first.md)。
+
+今天 09:00 曾漏发并已在当前聊天补发；这次按用户新指示修订内容，不记为新的自动运行。每天 09:00/22:00 的节奏不变，22:00 按修订任务核对实际提交，详见 [排期](learning/SCHEDULE.md)。
+
+## 已完成的仓库基础：REPO-001
 
 状态：Completed，2026-10-09。用户要求：独立新仓库，以 AGENTS.md 为主，先完成仓库再规划学习路线。
 
@@ -10,9 +26,4 @@
 Git 为独立 main，origin 已关联 [GitHub 私有仓库](https://github.com/s1eep1y416-desig/dm4310-motorbridge-control)。2026-10-09 用户授权首次提交上传，README 已补齐完整项目目录；实际提交版本以 Git 历史为准。
 2026-10-09 按用户要求移至桌面：`/Users/jkhkjg/Desktop/dm4310-motorbridge-control`。定时任务与每日任务模板使用桌面路径。
 
-## 当前每日任务
-
-无。2026-10-09 按用户要求删除全部已生成的每日任务、配套学习材料及首两周日程。
-保留 [长期路线与阶段任务池](roadmap/README.md) 供后续规划，不视为已经下发的每日任务。
-用户随后授权定时安排，从 2026-10-10 北京时间 09:00 开始，22:00 检查进度，周六复盘，详见 [定时学习安排](learning/SCHEDULE.md)。
-当前尚未下发新的学习任务；首次晨间运行从 S1-001 环境与设备证据卡起步，之后按实际完成情况推进。
+2026-10-09 已按要求删除旧每日任务和首两周日程；今天按随后授权的学习路线建立新的 S1-001 材料，不恢复旧任务。长期路线与其余候选任务见 [roadmap](roadmap/README.md)。

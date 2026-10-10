@@ -25,6 +25,7 @@
 | 工作规则 | [AGENTS.md](AGENTS.md) |
 | 实际环境、设备与未知项 | [PROJECT.md](PROJECT.md) |
 | 当前工作 | [CURRENT_TASK.md](CURRENT_TASK.md) |
+| 首日材料（2026-10-10 已改为 MotorBridge 入门） | [S1-001 任务卡](learning/daily/2026-10-10-S1-001.md) · [MotorBridge 讲义](knowledge/motor-control/motorbridge.md) · [程序设计](engineering/interfaces/motor-api.md) |
 | 原文完整目录与落实情况 | [目标目录](engineering/architecture/target-layout.md) |
 | Python 控制核心 | [src](src/README.md) |
 | 测试说明 | [tests](tests/README.md) |
@@ -47,7 +48,9 @@
 
 每次下发由助手确定具体文件夹和文件名，列明新建、修改或阅读，说明用途、用户应写内容、创建步骤、执行目录和验证命令。助手提供理论材料与设计提示，学习者完成指定的核心实践；没有提交代码不做正式代码审查，没有回答问题不评定理论掌握。
 
-定时安排从 2026-10-10 起按北京时间执行：09:00 安排学习，22:00 检查进度；周六复盘，周日补做或复习。首次晨间没有学习记录时从 S1-001 环境与设备证据卡起步。未完成任务保留原 ID 继续，详见 [定时学习安排](learning/SCHEDULE.md)。定时安排本身不代表已经生成讲义或完成学习。
+定时安排从 2026-10-10 起按北京时间执行：09:00 安排学习，22:00 检查进度；周六复盘，周日补做或复习。首次晨间没有学习记录时从 S1-001 MotorBridge 入门与状态显示起步。未完成任务保留原 ID 继续，详见 [定时学习安排](learning/SCHEDULE.md)。定时安排本身不代表已经生成讲义或完成学习。
+
+当前学习顺序：MotorBridge 对象与状态显示 → SDK 连接与反馈 → 单电机位置/速度/MIT 控制 → ROS 2 → 多关节及运动学、动力学。CAN/ID、环境和设备参数随实际调用补充。首日程序位于 `examples/S1_can_and_id/001_motorbridge_intro.py`；目录仍沿用 AGENTS 原文名称。首日环境报告和完整设备证据卡已被新练习替代，设备证据首次真实连接前补齐，见 [调整决定](engineering/design-decisions/ADR-0002-motorbridge-first.md)。
 
 ## 各目录放什么
 
@@ -217,11 +220,13 @@ dm4310-motorbridge-control/
 │   │   ├── control-data-flow.md  [规划]
 │   │   ├── motor-driver.md  [规划]
 │   │   ├── ros2-integration.md  [规划]
+│   │   ├── s1-001-evidence-card-design.md
 │   │   ├── safety-architecture.md  [规划]
 │   │   ├── system-overview.md
 │   │   └── target-layout.md
 │   ├── design-decisions/
 │   │   ├── ADR-0001-incremental-repository.md
+│   │   ├── ADR-0002-motorbridge-first.md
 │   │   └── README.md
 │   ├── hardware/  [预留]
 │   │   ├── can-adapter.md  [规划]
@@ -229,14 +234,15 @@ dm4310-motorbridge-control/
 │   │   ├── power-supply.md  [规划]
 │   │   └── safety-limits.md  [规划]
 │   ├── initialization-validation.md
-│   ├── interfaces/  [预留]
+│   ├── interfaces/
 │   │   ├── joint-interfaces.md  [规划]
-│   │   └── motor-api.md  [规划]
+│   │   └── motor-api.md
 │   ├── motorbridge-api-baseline.md
 │   └── repository-baseline.md
 ├── examples/
 │   ├── README.md
-│   ├── S1_can_and_id/  [预留]
+│   ├── S1_can_and_id/
+│   │   ├── 001_motorbridge_intro.py
 │   │   ├── enable_disable.py  [规划]
 │   │   ├── read_state.py  [规划]
 │   │   ├── scan_motor.py  [规划]
@@ -297,15 +303,15 @@ dm4310-motorbridge-control/
 │   │   ├── gear-ratio.md  [规划]
 │   │   ├── inertia.md  [规划]
 │   │   └── torque.md  [规划]
-│   ├── motor-control/  [预留]
+│   ├── motor-control/
 │   │   ├── mit-control.md  [规划]
 │   │   ├── motor-basics.md  [规划]
-│   │   ├── motorbridge.md  [规划]
+│   │   ├── motorbridge.md
 │   │   ├── pos-vel-control.md  [规划]
 │   │   └── velocity-control.md  [规划]
-│   ├── robotics/  [预留]
+│   ├── robotics/
 │   │   ├── coordinate-frames.md  [规划]
-│   │   ├── robot-architecture.md  [规划]
+│   │   ├── robot-architecture.md
 │   │   └── urdf.md  [规划]
 │   └── ros2/  [预留]
 │       ├── hardware-interface.md  [规划]
@@ -324,9 +330,11 @@ dm4310-motorbridge-control/
 │   │   ├── S6/  [预留]
 │   │   ├── S7/  [预留]
 │   │   └── S8/  [预留]
-│   ├── daily/  [预留]
+│   ├── daily/
+│   │   └── 2026-10-10-S1-001.md
 │   ├── progress.md
-│   ├── reviews/  [预留]
+│   ├── reviews/
+│   │   └── 2026-10-10-S1-001-review.md
 │   ├── SCHEDULE.md
 │   └── WORKFLOW.md
 ├── PROJECT.md
