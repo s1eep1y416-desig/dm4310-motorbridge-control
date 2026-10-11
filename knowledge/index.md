@@ -4,7 +4,7 @@
 
 ## 现有学习材料
 
-S1-001、S1-002 已于 2026-10-11 完成。下一任务为 S1-003 状态契约与反馈新鲜度，尚未开始。此前删除的旧材料没有恢复。
+S1-001、S1-002 已于 2026-10-11 完成。下一任务为 S1-003“控制回路的反馈链与状态有效性”，尚未开始。此前删除的旧材料没有恢复。
 
 - [S1-001 理论：MotorBridge 入门](motor-control/motorbridge.md)。
 - [当前理论：MotorBridge 连接入口与设备参数](motor-control/motorbridge-connection.md)。

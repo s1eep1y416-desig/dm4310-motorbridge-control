@@ -1,6 +1,6 @@
 # 当前任务状态：S1-002 已完成，下一项 S1-003
 
-日期：2026-10-11，Asia/Shanghai。S1-002 状态：Completed；S1 阶段状态：In Progress。下一任务 S1-003“SDK 状态契约与反馈新鲜度”尚未开始。
+日期：2026-10-11，Asia/Shanghai。S1-002 状态：Completed；S1 阶段状态：In Progress。下一任务 S1-003“控制回路的反馈链与状态有效性”尚未开始。
 
 本次约两小时，从面向硬件的实际调用链学习 `Controller.from_dm_serial(...)` 和 `add_damiao_motor(...)`，但只写离线代码骨架和参数事实表，不连接设备。
 
@@ -14,6 +14,8 @@
 - `engineering/hardware/s1-002-device-parameters.md`：记录六项参数的已知、未知、来源和风险。
 
 两个函数、硬件访问 docstring、六项参数表、四道题、静态检查和用户终端截图均已复核。代码与参数内容通过；截图只证明无顶层动作的模块运行，不证明真实连接。证据见 [S1-002 任务卡](learning/daily/2026-10-11-S1-002.md)。本课没有连接、请求反馈、使能、失能、运动、修改 ID 或写入持久化参数；完成 S1-002 不代表 S1 阶段通过。
+
+2026-10-11 课程重心已局部调整：后续以单电机控制为目标，S1-003 学控制回路的反馈输入，S1-004 进入 `src/robot_control/actuator/` 建立可复用模块；SDK ABI、指针和完整 CAN 细节只作选读。任务 ID、已完成证据和阶段验收保持不变，见 [ADR-0002 补充](engineering/design-decisions/ADR-0002-motorbridge-first.md)。
 
 ## 已完成的仓库基础：REPO-001
 

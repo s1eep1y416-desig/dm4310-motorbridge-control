@@ -51,7 +51,7 @@
 
 定时安排从 2026-10-10 起按北京时间执行：09:00 安排学习，22:00 检查进度；周六复盘，周日补做或复习。首次晨间没有学习记录时从 S1-001 MotorBridge 入门与状态显示起步。未完成任务保留原 ID 继续，详见 [定时学习安排](learning/SCHEDULE.md)。定时安排本身不代表已经生成讲义或完成学习。
 
-当前学习顺序：MotorBridge 对象与状态显示 → SDK 连接与反馈 → 单电机位置/速度/MIT 控制 → ROS 2 → 多关节及运动学、动力学。CAN/ID、环境和设备参数随实际调用补充。首日程序位于 `examples/S1_can_and_id/001_motorbridge_intro.py`；目录仍沿用 AGENTS 原文名称。首日环境报告和完整设备证据卡已被新练习替代，设备证据首次真实连接前补齐，见 [调整决定](engineering/design-decisions/ADR-0002-motorbridge-first.md)。
+当前学习顺序：以单电机控制为目标，先用 MotorBridge 建立对象、连接、反馈、可复用接入和安全生命周期，再进入位置/速度/MIT 控制，之后进入 ROS 2、多关节及运动学、动力学。CAN/ID、环境和设备参数随实际调用补充；ABI、指针和完整 CAN 协议只作选读。首日程序位于 `examples/S1_can_and_id/001_motorbridge_intro.py`；目录仍沿用 AGENTS 原文名称。首日环境报告和完整设备证据卡已被新练习替代，设备证据首次真实连接前补齐，见 [调整决定](engineering/design-decisions/ADR-0002-motorbridge-first.md)。
 
 ## 各目录放什么
 

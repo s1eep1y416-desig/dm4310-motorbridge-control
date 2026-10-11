@@ -12,10 +12,10 @@
 |---|---|---|---|---|---|---|---|
 | S1-001 | MotorBridge 入门与状态显示 | 2h | 无；使用现有 SDK 环境 | 用户状态显示程序、三组离线输出、对象关系解释 | 正确处理 MotorState/None、角度单位与三组输入；用户独立解释 | Completed | 探索：`examples/S1_can_and_id/`；本项暂不强制提取核心 |
 | S1-002 | SDK 连接入口与设备参数 | 2h | S1-001 | 连接方式选择、添加电机调用设计、参数/未知项简表 | 能解释 Controller 与 add_damiao_motor 参数；结合调用理解 ID 与收发，不猜设备值 | Completed | 调用探索：`examples/S1_can_and_id/`；参数方案：`engineering/interfaces/`、`engineering/hardware/`；配置：`config/` |
-| S1-003 | SDK 状态契约与反馈新鲜度 | 2h | S1-002 | API/字段表、状态有效性设计、阻塞边界问题单 | 接口来自实际版本；明确无法证明新鲜度的情况 | Backlog | 状态契约：`engineering/interfaces/`；为 `src/robot_control/actuator/` 的实现准备 |
-| S1-004 | MotorBridge 状态读取封装与离线验证 | 4h | S1-003 | 用户读取封装、可替换 SDK 输入、单元测试 | 正常/无反馈/陈旧/错误身份有独立用例 | Backlog | 核心：`src/robot_control/actuator/`；测试：`tests/unit/`、`tests/fixtures/`；调用：`examples/S1_can_and_id/` |
-| S1-005 | 使能失能与异常清理 | 4h | S1-004 | 状态图、用户代码、失败路径测试 | 配置缺失不打开设备；清理异常可见 | Backlog | 核心：`src/robot_control/actuator/`、`src/robot_control/safety/`；测试：`tests/unit/`、`tests/integration/` |
-| S1-006 | 真实身份、状态与生命周期实验 | 2–4h | S1-005；设备条件及授权 | 首次连接前补齐环境/设备证据、配置、原始状态、使能/失能和通信异常记录 | 真实证据齐全；若缺硬件则阻塞本任务 | Backlog | 调用：`examples/S1_can_and_id/`；验证：`tests/hardware/`；证据：`engineering/hardware/`、`experiments/single-motor/` |
+| S1-003 | 控制回路的反馈链与状态有效性 | 2h | S1-002 | 请求→轮询→取状态调用图、API/字段表、状态有效性与阻塞边界 | 能把反馈作为控制测量输入；接口来自实际版本；明确无法证明新鲜度的情况 | Backlog | 状态契约：`engineering/interfaces/`；调用探索：`examples/S1_can_and_id/`；为核心实现准备 |
+| S1-004 | 可复用 MotorBridge 状态读取模块 | 4h | S1-003 | 用户实现读取封装、可替换 SDK 输入和单元测试 | 核心模块可脱离硬件验证；正常/无反馈/陈旧/错误身份有独立用例 | Backlog | 核心：`src/robot_control/actuator/`；测试：`tests/unit/`、`tests/fixtures/`；调用：`examples/S1_can_and_id/` |
+| S1-005 | 单电机接入生命周期与安全门 | 4h | S1-004 | 连接/使能/失能状态图、用户代码、参数拒绝和失败路径测试 | 无效配置不打开设备；清理异常可见；控制接口只能在允许状态使用 | Backlog | 核心：`src/robot_control/actuator/`、`src/robot_control/safety/`；测试：`tests/unit/`、`tests/integration/` |
+| S1-006 | 首次真机读取与受控动作前验证 | 2–4h | S1-005；设备条件及授权 | 首次连接前设备证据、配置、真实身份/状态、授权范围内的使能失能与通信异常记录 | 为 S2 受限控制建立真实反馈和停止证据；若缺硬件则阻塞本任务 | Backlog | 调用：`examples/S1_can_and_id/`；验证：`tests/hardware/`；证据：`engineering/hardware/`、`experiments/single-motor/` |
 | S1-007 | S1 审查、考核与补缺 | 2–4h | S1-006；用户提交 | 审查整改、用户回答、阶段报告 | 满足 S1 全部门槛 | Backlog | 复核本阶段核心与测试；记录：`learning/reviews/`、`learning/assessments/S1/`；修复回到原模块 |
 | S2-001 | 模式与受限命令接口 | 4h | S1-007 | MIT/POS_VEL/VEL 对照、状态机、限幅/拒绝设计 | 解释设备内部环；验证单位和不合法输入 | Backlog | 核心：`src/robot_control/controllers/`、`src/robot_control/safety/`；测试：`tests/unit/` |
 | S2-002 | 到位等待与三类超时 | 4–6h | S2-001 | 用户实现与正常/高速未停/超时/失联测试 | 区分反馈年龄、命令超时和整段运动超时 | Backlog | 核心：`src/robot_control/controllers/`、`src/robot_control/safety/`；测试：`tests/unit/`、`tests/fixtures/` |
@@ -51,7 +51,7 @@
 
 ## 新仓库起点
 
-REPO-001 已完成目录、安装和导入测试基础。2026-10-10 用户要求直接从 MotorBridge 开始，S1-001 保留 ID 并改为 SDK 对象与状态显示练习，见 [今日任务](../learning/daily/2026-10-10-S1-001.md)。旧设备盘点不再是首日必交项，相关证据首次连接前补齐；S1-004 等后续任务仍未下发。
+REPO-001 已完成目录、安装和导入测试基础。2026-10-10 用户要求直接从 MotorBridge 开始，S1-001 保留 ID 并改为 SDK 对象与状态显示练习，见 [今日任务](../learning/daily/2026-10-10-S1-001.md)。2026-10-11 再次确认以单电机控制目标组织课程：连接、反馈和安全随控制需要学习，ABI/指针只作选读。旧设备盘点不再是首日必交项，相关证据首次连接前补齐；S1-003 等后续任务仍未下发。
 旧项目 DM-001 仅是到位/超时主题的参考资料，不复制其源码、不继承任务完成状态。S2-002 在本仓库独立实现。
 
 ## 延期记录格式
