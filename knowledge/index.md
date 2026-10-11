@@ -4,12 +4,13 @@
 
 ## 现有学习材料
 
-2026-10-10 已提供 S1-001 学习材料，用户理解与实践尚未评估；此前删除的旧材料没有恢复。
+S1-001、S1-002 已于 2026-10-11 完成。下一任务为 S1-003 状态契约与反馈新鲜度，尚未开始。此前删除的旧材料没有恢复。
 
-- [当前理论：MotorBridge 入门](motor-control/motorbridge.md)。
-- [当前设计：状态显示程序](../engineering/interfaces/motor-api.md)。
+- [S1-001 理论：MotorBridge 入门](motor-control/motorbridge.md)。
+- [当前理论：MotorBridge 连接入口与设备参数](motor-control/motorbridge-connection.md)。
+- [当前设计：连接代码骨架](../engineering/interfaces/motor-connection.md)。
 - 按需参考：[机器人控制链路与证据](robotics/robot-architecture.md)、[首次接硬件前的资料整理](../engineering/architecture/s1-001-evidence-card-design.md)；不再作为首日必交作业。
-- [今日任务：操作、文件名、问题与验收](../learning/daily/2026-10-10-S1-001.md)。
+- [今日任务：S1-002 操作、文件名、问题与验收](../learning/daily/2026-10-11-S1-002.md)。
 
 尚未形成经过用户解释/实践验证的掌握结论。
 [MotorBridge 接口基线](../engineering/motorbridge-api-baseline.md) 是版本相关工程记录；[来源映射](../docs/source-map.md) 保存项目规范来源。
@@ -18,7 +19,7 @@
 
 | 主题 | 阶段 | 工程关联 | 当前状态 |
 |---|---|---|---|
-| MotorBridge 对象、连接、反馈；按需补 CAN/ID | S1 | examples / actuator / 配置 | S1-001 已提供材料，理解未评估 |
+| MotorBridge 对象、连接、反馈；按需补 CAN/ID | S1 | examples / actuator / 配置 | S1-001、S1-002 已完成；下一项 S1-003 |
 | 电机模式、PID、采样周期 | S2 | controllers / safety | 待任务学习 |
 | 力矩、减速比、摩擦与惯量 | S2/S6/S7 | 设备与动力学模型 | 待资料与模型证据 |
 | ROS 2 接口、QoS、TF2 | S3/S6 | ROS 工作区 | 待环境确认 |

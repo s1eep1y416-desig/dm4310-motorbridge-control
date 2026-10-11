@@ -26,6 +26,7 @@
 | 实际环境、设备与未知项 | [PROJECT.md](PROJECT.md) |
 | 当前工作 | [CURRENT_TASK.md](CURRENT_TASK.md) |
 | 首日材料（2026-10-10 已改为 MotorBridge 入门） | [S1-001 任务卡](learning/daily/2026-10-10-S1-001.md) · [MotorBridge 讲义](knowledge/motor-control/motorbridge.md) · [程序设计](engineering/interfaces/motor-api.md) |
+| 最近完成任务 | [S1-002 任务卡](learning/daily/2026-10-11-S1-002.md) · [连接讲义](knowledge/motor-control/motorbridge-connection.md) · [连接设计](engineering/interfaces/motor-connection.md) |
 | 原文完整目录与落实情况 | [目标目录](engineering/architecture/target-layout.md) |
 | Python 控制核心 | [src](src/README.md) |
 | 测试说明 | [tests](tests/README.md) |
@@ -232,17 +233,20 @@ dm4310-motorbridge-control/
 │   │   ├── can-adapter.md  [规划]
 │   │   ├── dm4310.md  [规划]
 │   │   ├── power-supply.md  [规划]
+│   │   ├── s1-002-device-parameters.md
 │   │   └── safety-limits.md  [规划]
 │   ├── initialization-validation.md
 │   ├── interfaces/
 │   │   ├── joint-interfaces.md  [规划]
-│   │   └── motor-api.md
+│   │   ├── motor-api.md
+│   │   └── motor-connection.md
 │   ├── motorbridge-api-baseline.md
 │   └── repository-baseline.md
 ├── examples/
 │   ├── README.md
 │   ├── S1_can_and_id/
 │   │   ├── 001_motorbridge_intro.py
+│   │   ├── 002_motorbridge_connection.py
 │   │   ├── enable_disable.py  [规划]
 │   │   ├── read_state.py  [规划]
 │   │   ├── scan_motor.py  [规划]
@@ -306,6 +310,7 @@ dm4310-motorbridge-control/
 │   ├── motor-control/
 │   │   ├── mit-control.md  [规划]
 │   │   ├── motor-basics.md  [规划]
+│   │   ├── motorbridge-connection.md
 │   │   ├── motorbridge.md
 │   │   ├── pos-vel-control.md  [规划]
 │   │   └── velocity-control.md  [规划]
@@ -331,7 +336,8 @@ dm4310-motorbridge-control/
 │   │   ├── S7/  [预留]
 │   │   └── S8/  [预留]
 │   ├── daily/
-│   │   └── 2026-10-10-S1-001.md
+│   │   ├── 2026-10-10-S1-001.md
+│   │   └── 2026-10-11-S1-002.md
 │   ├── progress.md
 │   ├── reviews/
 │   │   └── 2026-10-10-S1-001-review.md

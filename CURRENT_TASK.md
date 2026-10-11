@@ -1,18 +1,19 @@
-# 当前任务状态：S1-001 已完成，下一项 S1-002
+# 当前任务状态：S1-002 已完成，下一项 S1-003
 
-日期：2026-10-11，Asia/Shanghai。S1-001 状态：Completed；S1 阶段状态：In Progress。下一任务 S1-002“SDK 连接入口与设备参数”尚未开始。
+日期：2026-10-11，Asia/Shanghai。S1-002 状态：Completed；S1 阶段状态：In Progress。下一任务 S1-003“SDK 状态契约与反馈新鲜度”尚未开始。
 
-用户要求直接从 MotorBridge 开始，原环境/设备盘点作业已改为本课，任务 ID 保留。约两小时，先认识 SDK 对象，再写一个可运行的状态显示程序。
+本次约两小时，从面向硬件的实际调用链学习 `Controller.from_dm_serial(...)` 和 `add_damiao_motor(...)`，但只写离线代码骨架和参数事实表，不连接设备。
 
-1. [今日任务：具体文件、操作、问题与验收](learning/daily/2026-10-10-S1-001.md)。
-2. [理论：Controller、Motor、MotorState 与反馈流程](knowledge/motor-control/motorbridge.md)。
-3. [设计：状态输入、显示输出与三个离线场景](engineering/interfaces/motor-api.md)。
+1. [今日任务：文件、操作、问题与验收](learning/daily/2026-10-11-S1-002.md)。
+2. [理论：连接入口、参数和证据边界](knowledge/motor-control/motorbridge-connection.md)。
+3. [设计：两个最小函数与静态验证](engineering/interfaces/motor-connection.md)。
 
-已审查 `examples/S1_can_and_id/001_motorbridge_intro.py` 的最终保存版本：全部硬件调用已删除，三组合成输入、None、rad/deg/rad/s 和入口均通过离线复核。2026-10-11 用户提供 Linux/Conda 终端照片，完整输出与预期一致并返回提示符；这不是 Windows 或硬件验证。用户独立复述对象分层、离线/真实流程、None/零值、反馈新鲜度，并最终纠正 `request_feedback()` 属于 Motor。S1-001 验收完成，见 [代码审查](learning/reviews/2026-10-10-S1-001-review.md)。此前聊天中的真机版本未运行，不是最终文件。
+学习者本次完成：
 
-今天不再提交原要求的环境 JSON 和完整设备证据卡；这些资料首次真实连接前补齐。原辅助文档保留作参考，决定见 [ADR-0002](engineering/design-decisions/ADR-0002-motorbridge-first.md)。
+- `examples/S1_can_and_id/002_motorbridge_connection.py`：独立编写两个函数，只定义、不调用。
+- `engineering/hardware/s1-002-device-parameters.md`：记录六项参数的已知、未知、来源和风险。
 
-今天 09:00 曾漏发并已在当前聊天补发；这次按用户新指示修订内容，不记为新的自动运行。每天 09:00/22:00 的节奏不变，22:00 按修订任务核对实际提交，详见 [排期](learning/SCHEDULE.md)。
+两个函数、硬件访问 docstring、六项参数表、四道题、静态检查和用户终端截图均已复核。代码与参数内容通过；截图只证明无顶层动作的模块运行，不证明真实连接。证据见 [S1-002 任务卡](learning/daily/2026-10-11-S1-002.md)。本课没有连接、请求反馈、使能、失能、运动、修改 ID 或写入持久化参数；完成 S1-002 不代表 S1 阶段通过。
 
 ## 已完成的仓库基础：REPO-001
 
